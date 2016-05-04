@@ -25,7 +25,7 @@ RUN mkdir mongodb && mkdir newrelic
 
 WORKDIR /var/lib/hhvm/extensions/mongodb
 RUN apt-get install -yq git \
-    && git clone git://github.com/mongodb/libbson.git \
+    && git clone --branch r1.2 --depth 1 git://github.com/mongodb/libbson.git \
     && cd libbson/ \
     && ./autogen.sh \
     && make \
